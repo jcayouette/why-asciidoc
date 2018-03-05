@@ -1,0 +1,277 @@
+:notitle:
+:Presenter: Contributors: Joseph Cayouette, Klaus Kämpf
+
+= Why Asciidoc?
+:source-highlighter: highlightjs
+
+[background-color="#666A86"]
+== Why Asciidoc?
+Refining the SUSE Documentation Process
+
+image::simplify-process.png[]
+
+{presenter}
+
+[background-color="#95B8D1"]
+== Discussion Points
+
+[%step]
+* What do we gain by moving to Asciidoc?
+* What do we lose?
+* How will it Affect us?
+
+[background-color="#EDAFB8"]
+== What do we Gain?
+[%step]
+* Compatible with current SUSE publishing tools
+* Content becomes the priority +
+=> Instead of appeasing complex xml schemas
+* Substantial gains in efficiency
+* As simple as any wiki
+
+[background-color="#95B8D1"]
+== What do we Gain Cont..
+[%step]
+* Remove the need for expensive/complex proprietary IDEs like OxygenXML.
+* GitHub supports .adoc files natively
+* Preview functionality is fully support on GitHub
+* Asciidoc provides its own syntax validation
+
+[background-color="#95B8D1"]
+== Comparison: Asciidoc vs Docbook 5
+The following slides will provide example syntax snippets
+
+== Docbook Itemizedlist
+[source, xml]
+----
+<itemizedlist>
+        <listitem>
+         <para>
+          IBM zEnterprise System z196 <emphasis>(z196)</emphasis>
+         </para>
+        </listitem>
+        <listitem>
+         <para>
+          IBM zEnterprise System z114 <emphasis>(z114)</emphasis>
+         </para>
+        </listitem>
+        <listitem>
+         <para>
+          IBM zEnterprise EC12 <emphasis>(zEC12)</emphasis>
+         </para>
+        </listitem>
+</itemizedlist>
+----
+
+== Asciidoc itemizedlist
+
+[source, markdown]
+----
+* IBM zEnterprise System z196 (z196)
+* IBM zEnterprise System z114 (z114)
+* IBM zEnterprise EC12 (zEC12)
+----
+
+[background-color="#E8DDB5"]
+== Docbook 5 Table Boilerplate Example
+[source, xml, linenums]
+----
+<table xml:id="tab.wbem.setting.daemon.1" frame="topbot" rowsep="0">
+ <title>Commands for Managing sfcbd</title>
+ <tgroup cols="2">
+  <colspec colnum="1" colname="1"/>
+  <colspec colnum="2" colname="2"/>
+  <thead>
+   <row rowsep="1">
+    <entry colname="1">
+     <para>
+      Task
+     </para>
+    </entry>
+    <entry colname="2">
+     <para>
+      Linux Command
+     </para>
+    </entry>
+   </row>
+  </thead>
+  <tbody>
+   <row rowsep="0">
+    <entry colname="1">
+     <para>
+      Start sfcbd
+     </para>
+    </entry>
+    <entry colname="2">
+     <para>
+      Enter <command>systemctl start sfcb</command> as &rootuser; in the
+      command line.
+     </para>
+    </entry>
+   </row>
+   <row rowsep="0">
+    <entry colname="1">
+     <para>
+      Stop sfcbd
+     </para>
+    </entry>
+    <entry colname="2">
+     <para>
+      Enter <command>systemctl stop sfcb</command> as &rootuser; in the
+      command line.
+     </para>
+    </entry>
+   </row>
+   <row rowsep="0">
+    <entry colname="1">
+     <para>
+      Check sfcbd status
+     </para>
+    </entry>
+    <entry colname="2">
+     <para>
+      Enter <command>systemctl status sfcb</command>as &rootuser; in the
+      command line.
+     </para>
+    </entry>
+   </row>
+  </tbody>
+ </tgroup>
+</table>
+----
+62 Lines of boilerplate syntax with minor content.
+
+[%notitle]
+[transition=zoom]
+[background-color="#333333"]
+== I Will Go Insane Typing this
+
+image::panic-gif.gif[size, 700, 500]
+
+[background-color="#666A86"]
+== Asciidoc Table Example
+[source, asciidoc]
+----
+[caption="Commands for Managing sfcbd. "]
+|===
+|Task  | Linux Command
+
+|```Start sfcbd```
+|```Stop sfcbd```
+|```Status sfcbd```
+
+|From the CLI enter ```systemctl start sfcb``` as ```root```
+|From the CLI enter ```systemctl stop sfcb``` as ```root```
+|From the CLI enter ```systemctl status sfcb``` as ```root```
+|===
+----
+12 Lines of content and minor syntax.
+
+* http://Asciidoc.org/docs/user-manual/#tables
+
+[%notitle]
+[transition=zoom]
+== Inspiring a New Generation of Writers
+
+image:awe.gif[size, 600, 500]
+
+[background-color="#EDAFB8"]
+== What do We Lose?
+[%step]
+* True schema validation
+* Development time for maturing the Asciidoc tool-chain
+
+[background-color="#666A86"]
+== How Will it Affect Us?
+[%step]
+* Asciidoc will increase contribution from all sources
+* Provides a cornerstone for improving the SUSE Documentation Process
+* SUSE/OpenSUSE will both benefit greatly in public sector from a modern/open doc process
+
+[background-color="#7F7CAF"]
+== What is Next?
+[%step]
+* Organization wide product docs repository/TravisCI setup/deployment
+* Lunch & Learn Getting started guide for Asciidoc
+* Contribution/PR guide for Github and SUSE documentation style guide
+* Marketing => A simplified documentation process is useless if no one knows about it!
+
+[background-color="#EDAFB8"]
+== Section Syntax
+[source, Asciidoc]
+----
+= Document Title (Level 0)
+
+== Level 1 Section Title
+
+=== Level 2 Section Title
+
+==== Level 3 Section Title
+
+===== Level 4 Section Title
+
+====== Level 5 Section Title
+
+== Another Level 1 Section Title
+----
+
+[background-color="#666A86"]
+== Formatted Text Syntax Raw
+[source, asciidoc]
+----
+*bold phrase* & **char**acter**s**
+
+_italic phrase_ & __char__acter__s__
+
+*_bold italic phrase_* & **__char__**acter**__s__**
+
+`monospace phrase` & ``char``acter``s``
+
+`*monospace bold phrase*` & ``**char**``acter``**s**``
+
+`_monospace italic phrase_` & ``__char__``acter``__s__``
+
+`*_monospace bold italic phrase_*` &
+``**__char__**``acter``**__s__**``
+----
+
+[background-color="#7F7CAF"]
+== Formatted Text Rendered
+*bold phrase* & **char**acter**s**
+
+_italic phrase_ & __char__acter__s__
+
+*_bold italic phrase_* & **__char__**acter**__s__**
+
+`monospace phrase` & ``char``acter``s``
+
+`*monospace bold phrase*` & ``**char**``acter``**s**``
+
+`_monospace italic phrase_` & ``__char__``acter``__s__``
+
+`*_monospace bold italic phrase_*` &
+``**__char__**``acter``**__s__**``
+
+[background-color="#EDAFB8"]
+== Image Syntax
+[source, Asciidoc]
+----
+image::sunset.jpg[]
+
+image::sunset.jpg[Sunset]
+
+.A mountain sunset
+[#img-sunset]
+[caption="Figure 1: ",link=https://www.flickr.com/photos/javh/5448336655]
+image::sunset.jpg[Sunset,300,200]
+
+image::https://Asciidoc.org/images/octocat.jpg[GitHub mascot]
+----
+
+[background-color="#666A86"]
+== Image Rendered
+.A Happy Hedgehog
+image::hedgepig.gif[Happy HedgeHog]
+
+== Thank You!
+This presentation was written in Asciidoc and presented via https://github.com/hakimel/reveal.js/

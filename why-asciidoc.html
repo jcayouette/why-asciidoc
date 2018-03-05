@@ -1,0 +1,252 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Why Asciidoc?</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="reveal.js/css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme"><link href="reveal.js/lib/css/zenburn.css" rel="stylesheet"><script>var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? "reveal.js/css/print/pdf.css" : "reveal.js/css/print/paper.css";
+document.getElementsByTagName( 'head' )[0].appendChild( link );</script><!--[if lt IE 9]><script src="reveal.js/lib/js/html5shiv.js"></script><![endif]--></head><body><div class="reveal"><div class="slides"><section id="why_asciidoc" data-background-color="#666A86"><h2>Why Asciidoc?</h2><div class="paragraph"><p>Refining the SUSE Documentation Process</p></div>
+<div class="imageblock" style=""><img src="simplify-process.png" alt="simplify process"></div>
+<div class="paragraph"><p>Contributors: Joseph Cayouette, Klaus Kämpf</p></div></section>
+<section id="discussion_points" data-background-color="#95B8D1"><h2>Discussion Points</h2><div class="ulist"><ul><li class="fragment"><p>What do we gain by moving to Asciidoc?</p></li><li class="fragment"><p>What do we lose?</p></li><li class="fragment"><p>How will it Affect us?</p></li></ul></div></section>
+<section id="what_do_we_gain" data-background-color="#EDAFB8"><h2>What do we Gain?</h2><div class="ulist"><ul><li class="fragment"><p>Compatible with current SUSE publishing tools</p></li><li class="fragment"><p>Content becomes the priority<br>
+&#8658; Instead of appeasing complex xml schemas</p></li><li class="fragment"><p>Substantial gains in efficiency</p></li><li class="fragment"><p>As simple as any wiki</p></li></ul></div></section>
+<section id="what_do_we_gain_cont" data-background-color="#95B8D1"><h2>What do we Gain Cont..</h2><div class="ulist"><ul><li class="fragment"><p>Remove the need for expensive/complex proprietary IDEs like OxygenXML.</p></li><li class="fragment"><p>GitHub supports .adoc files natively</p></li><li class="fragment"><p>Preview functionality is fully support on GitHub</p></li><li class="fragment"><p>Asciidoc provides its own syntax validation</p></li></ul></div></section>
+<section id="comparison_asciidoc_vs_docbook_5" data-background-color="#95B8D1"><h2>Comparison: Asciidoc vs Docbook 5</h2><div class="paragraph"><p>The following slides will provide example syntax snippets</p></div></section>
+<section id="docbook_itemizedlist"><h2>Docbook Itemizedlist</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="xml language-xml">&lt;itemizedlist&gt;
+        &lt;listitem&gt;
+         &lt;para&gt;
+          IBM zEnterprise System z196 &lt;emphasis&gt;(z196)&lt;/emphasis&gt;
+         &lt;/para&gt;
+        &lt;/listitem&gt;
+        &lt;listitem&gt;
+         &lt;para&gt;
+          IBM zEnterprise System z114 &lt;emphasis&gt;(z114)&lt;/emphasis&gt;
+         &lt;/para&gt;
+        &lt;/listitem&gt;
+        &lt;listitem&gt;
+         &lt;para&gt;
+          IBM zEnterprise EC12 &lt;emphasis&gt;(zEC12)&lt;/emphasis&gt;
+         &lt;/para&gt;
+        &lt;/listitem&gt;
+&lt;/itemizedlist&gt;</code></pre></div></div></section>
+<section id="asciidoc_itemizedlist"><h2>Asciidoc itemizedlist</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="markdown language-markdown">* IBM zEnterprise System z196 (z196)
+* IBM zEnterprise System z114 (z114)
+* IBM zEnterprise EC12 (zEC12)</code></pre></div></div></section>
+<section id="docbook_5_table_boilerplate_example" data-background-color="#E8DDB5"><h2>Docbook 5 Table Boilerplate Example</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="xml language-xml">&lt;table xml:id="tab.wbem.setting.daemon.1" frame="topbot" rowsep="0"&gt;
+ &lt;title&gt;Commands for Managing sfcbd&lt;/title&gt;
+ &lt;tgroup cols="2"&gt;
+  &lt;colspec colnum="1" colname="1"/&gt;
+  &lt;colspec colnum="2" colname="2"/&gt;
+  &lt;thead&gt;
+   &lt;row rowsep="1"&gt;
+    &lt;entry colname="1"&gt;
+     &lt;para&gt;
+      Task
+     &lt;/para&gt;
+    &lt;/entry&gt;
+    &lt;entry colname="2"&gt;
+     &lt;para&gt;
+      Linux Command
+     &lt;/para&gt;
+    &lt;/entry&gt;
+   &lt;/row&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+   &lt;row rowsep="0"&gt;
+    &lt;entry colname="1"&gt;
+     &lt;para&gt;
+      Start sfcbd
+     &lt;/para&gt;
+    &lt;/entry&gt;
+    &lt;entry colname="2"&gt;
+     &lt;para&gt;
+      Enter &lt;command&gt;systemctl start sfcb&lt;/command&gt; as &amp;rootuser; in the
+      command line.
+     &lt;/para&gt;
+    &lt;/entry&gt;
+   &lt;/row&gt;
+   &lt;row rowsep="0"&gt;
+    &lt;entry colname="1"&gt;
+     &lt;para&gt;
+      Stop sfcbd
+     &lt;/para&gt;
+    &lt;/entry&gt;
+    &lt;entry colname="2"&gt;
+     &lt;para&gt;
+      Enter &lt;command&gt;systemctl stop sfcb&lt;/command&gt; as &amp;rootuser; in the
+      command line.
+     &lt;/para&gt;
+    &lt;/entry&gt;
+   &lt;/row&gt;
+   &lt;row rowsep="0"&gt;
+    &lt;entry colname="1"&gt;
+     &lt;para&gt;
+      Check sfcbd status
+     &lt;/para&gt;
+    &lt;/entry&gt;
+    &lt;entry colname="2"&gt;
+     &lt;para&gt;
+      Enter &lt;command&gt;systemctl status sfcb&lt;/command&gt;as &amp;rootuser; in the
+      command line.
+     &lt;/para&gt;
+    &lt;/entry&gt;
+   &lt;/row&gt;
+  &lt;/tbody&gt;
+ &lt;/tgroup&gt;
+&lt;/table&gt;</code></pre></div></div>
+<div class="paragraph"><p>62 Lines of boilerplate syntax with minor content.</p></div></section>
+<section id="i_will_go_insane_typing_this" data-transition="zoom" data-background-color="#333333"><div class="imageblock" style=""><img src="panic-gif.gif" alt="size" width="700" height="500"></div></section>
+<section id="asciidoc_table_example" data-background-color="#666A86"><h2>Asciidoc Table Example</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="asciidoc language-asciidoc">[caption="Commands for Managing sfcbd. "]
+|===
+|Task  | Linux Command
+
+|```Start sfcbd```
+|```Stop sfcbd```
+|```Status sfcbd```
+
+|From the CLI enter ```systemctl start sfcb``` as ```root```
+|From the CLI enter ```systemctl stop sfcb``` as ```root```
+|From the CLI enter ```systemctl status sfcb``` as ```root```
+|===</code></pre></div></div>
+<div class="paragraph"><p>12 Lines of content and minor syntax.</p></div>
+<div class="ulist"><ul><li><p><a href="http://Asciidoc.org/docs/user-manual/#tables" class="bare">http://Asciidoc.org/docs/user-manual/#tables</a></p></li></ul></div></section>
+<section id="inspiring_a_new_generation_of_writers" data-transition="zoom"><div class="paragraph"><p><span class="image"><img src="awe.gif" alt="size" width="600" height="500"></span></p></div></section>
+<section id="what_do_we_lose" data-background-color="#EDAFB8"><h2>What do We Lose?</h2><div class="ulist"><ul><li class="fragment"><p>True schema validation</p></li><li class="fragment"><p>Development time for maturing the Asciidoc tool-chain</p></li></ul></div></section>
+<section id="how_will_it_affect_us" data-background-color="#666A86"><h2>How Will it Affect Us?</h2><div class="ulist"><ul><li class="fragment"><p>Asciidoc will increase contribution from all sources</p></li><li class="fragment"><p>Provides a cornerstone for improving the SUSE Documentation Process</p></li><li class="fragment"><p>SUSE/OpenSUSE will both benefit greatly in public sector from a modern/open doc process</p></li></ul></div></section>
+<section id="what_is_next" data-background-color="#7F7CAF"><h2>What is Next?</h2><div class="ulist"><ul><li class="fragment"><p>Organization wide product docs repository/TravisCI setup/deployment</p></li><li class="fragment"><p>Lunch &amp; Learn Getting started guide for Asciidoc</p></li><li class="fragment"><p>Contribution/PR guide for Github and SUSE documentation style guide</p></li><li class="fragment"><p>Marketing &#8658; A simplified documentation process is useless if no one knows about it!</p></li></ul></div></section>
+<section id="section_syntax" data-background-color="#EDAFB8"><h2>Section Syntax</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="Asciidoc language-Asciidoc">= Document Title (Level 0)
+
+== Level 1 Section Title
+
+=== Level 2 Section Title
+
+==== Level 3 Section Title
+
+===== Level 4 Section Title
+
+====== Level 5 Section Title
+
+== Another Level 1 Section Title</code></pre></div></div></section>
+<section id="formatted_text_syntax_raw" data-background-color="#666A86"><h2>Formatted Text Syntax Raw</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="asciidoc language-asciidoc">*bold phrase* &amp; **char**acter**s**
+
+_italic phrase_ &amp; __char__acter__s__
+
+*_bold italic phrase_* &amp; **__char__**acter**__s__**
+
+`monospace phrase` &amp; ``char``acter``s``
+
+`*monospace bold phrase*` &amp; ``**char**``acter``**s**``
+
+`_monospace italic phrase_` &amp; ``__char__``acter``__s__``
+
+`*_monospace bold italic phrase_*` &amp;
+``**__char__**``acter``**__s__**``</code></pre></div></div></section>
+<section id="formatted_text_rendered" data-background-color="#7F7CAF"><h2>Formatted Text Rendered</h2><div class="paragraph"><p><strong>bold phrase</strong> &amp; <strong>char</strong>acter<strong>s</strong></p></div>
+<div class="paragraph"><p><em>italic phrase</em> &amp; <em>char</em>acter<em>s</em></p></div>
+<div class="paragraph"><p><strong><em>bold italic phrase</em></strong> &amp; <strong><em>char</em></strong>acter<strong><em>s</em></strong></p></div>
+<div class="paragraph"><p><code>monospace phrase</code> &amp; <code>char</code>acter<code>s</code></p></div>
+<div class="paragraph"><p><code><strong>monospace bold phrase</strong></code> &amp; <code><strong>char</strong></code>acter<code><strong>s</strong></code></p></div>
+<div class="paragraph"><p><code><em>monospace italic phrase</em></code> &amp; <code><em>char</em></code>acter<code><em>s</em></code></p></div>
+<div class="paragraph"><p><code><strong><em>monospace bold italic phrase</em></strong></code> &amp;
+<code><strong><em>char</em></strong></code>acter<code><strong><em>s</em></strong></code></p></div></section>
+<section id="image_syntax" data-background-color="#EDAFB8"><h2>Image Syntax</h2><div class="listingblock"><div class="content"><pre class="highlight"><code data-noescape class="Asciidoc language-Asciidoc">image::sunset.jpg[]
+
+image::sunset.jpg[Sunset]
+
+.A mountain sunset
+[#img-sunset]
+[caption="Figure 1: ",link=https://www.flickr.com/photos/javh/5448336655]
+image::sunset.jpg[Sunset,300,200]
+
+image::https://Asciidoc.org/images/octocat.jpg[GitHub mascot]</code></pre></div></div></section>
+<section id="image_rendered" data-background-color="#666A86"><h2>Image Rendered</h2><div class="imageblock" style=""><img src="hedgepig.gif" alt="Happy HedgeHog"></div><div class="title">Figure 1. A Happy Hedgehog</div></section>
+<section id="thank_you"><h2>Thank You!</h2><div class="paragraph"><p>This presentation was written in Asciidoc and presented via <a href="https://github.com/hakimel/reveal.js/" class="bare">https://github.com/hakimel/reveal.js/</a></p></div></section></div></div><script src="reveal.js/lib/js/head.min.js"></script><script src="reveal.js/js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Set a per-slide timing for speaker notes, null means none
+  defaultTiming: null,
+  // Display the page number of the current slide
+  slideNumber: false,
+  // Push each slide change to the browser history
+  history: false,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Randomizes the order of slides each time the presentation loads
+  shuffle: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Flags if we should show a help overlay when the questionmark
+  // key is pressed
+  help: true,
+  // Flags if speaker notes should be visible to all viewers
+  showNotes: false,
+  // Global override for autolaying embedded media (video/audio/iframe)
+  // - null: Media will only autoplay if data-autoplay is present
+  // - true: All media will autoplay, regardless of individual setting
+  // - false: No media will autoplay, regardless of individual setting
+  autoPlayMedia: null,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'black',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'slide',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+      { src: 'reveal.js/plugin/notes/notes.js', async: true }
+  ]
+});</script></body></html>
